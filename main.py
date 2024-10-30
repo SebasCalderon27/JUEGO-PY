@@ -11,7 +11,7 @@ high_score = 0
 #CONFIGURACION DE VENTANA
 wn = turtle.Screen()
 wn.title("Juego de Snake")
-wn.bgcolor("black")
+wn.bgcolor("light green")
 wn.setup(width = 600, height = 600)
 wn.tracer(0)
 
@@ -19,7 +19,7 @@ wn.tracer(0)
 cabeza = turtle.Turtle()
 cabeza.speed(0)
 cabeza.shape("square")
-cabeza.color("white")
+cabeza.color("dark green")
 cabeza.penup()
 cabeza.goto(0,0)
 cabeza.direction = "stop"
@@ -37,11 +37,11 @@ segmentos= []
 #TEXTO
 texto=turtle.Turtle()
 texto.speed(0)
-texto.color("white")
+texto.color("black")
 texto.penup()
 texto.hideturtle()
 texto.goto(0,260)
-texto.write("SCORE:0            HIGH SCORE: 0", align = "center", font = ("Courier", 24, "normal"))
+texto.write("SCORE:0         HIGH SCORE: 0", align = "center", font = ("Courier", 24, "normal"))
 
 #FUNCIONES
 def arriba():
@@ -100,7 +100,7 @@ while True:
         #RESET MARCADOR
         score = 0
         texto.clear()
-        texto.write("SCORE:{}             HIGH SCORE:{}".format(score, high_score),
+        texto.write("SCORE:{}          HIGH SCORE:{}".format(score, high_score),
                 align = "center", font = ("Courier", 24, "normal"))
         
     #COLISION CON COMIDA
@@ -113,7 +113,7 @@ while True:
         nuevo_segmento = turtle.Turtle()
         nuevo_segmento.speed(0)
         nuevo_segmento.shape("square")
-        nuevo_segmento.color("grey")
+        nuevo_segmento.color("green")
         nuevo_segmento.penup()
         segmentos.append(nuevo_segmento)
         
@@ -124,7 +124,7 @@ while True:
             high_score = score
         
         texto.clear()
-        texto.write("SCORE:{}             HIGH SCORE:{}".format(score, high_score),
+        texto.write("SCORE:{}          HIGH SCORE:{}".format(score, high_score),
                 align = "center", font = ("Courier", 24, "normal"))
         
     #MOVER CUERPO DE SERPIENTE
@@ -158,7 +158,7 @@ while True:
             #RESET MARCADOR
             score = 0
             texto.clear()
-            texto.write("SCORE:{}             HIGH SCORE:{}".format(score, high_score),
+            texto.write("SCORE:{}          HIGH SCORE:{}".format(score, high_score),
                 align = "center", font = ("Courier", 24, "normal"))
             
     time.sleep(posponer)  
